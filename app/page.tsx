@@ -4,25 +4,27 @@ import { useState } from 'react';
 import DomeGallery from '@/components/DomeGallery';
 import InteractionFlow from '@/components/InteractionFlow';
 
+const basePath = '/I-Love-My-GF';
+
 export default function Home() {
   const [showGallery, setShowGallery] = useState(false);
 
   const userImages = [
-    '/1.jpeg',
-    '/2.jpeg',
-    '/3.jpeg',
-    '/4.jpeg',
-    '/5.jpeg',
-    '/6.jpeg',
-    '/7.jpeg',
-    '/8.jpeg',
-    '/9.jpeg',
-    '/10.jpeg',
-    '/11.jpeg',
-    '/12.jpeg',
-    '/13.jpeg',
-    '/14.jpeg',
-    '/15.jpeg',
+    `${basePath}/1.jpeg`,
+    `${basePath}/2.jpeg`,
+    `${basePath}/3.jpeg`,
+    `${basePath}/4.jpeg`,
+    `${basePath}/5.jpeg`,
+    `${basePath}/6.jpeg`,
+    `${basePath}/7.jpeg`,
+    `${basePath}/8.jpeg`,
+    `${basePath}/9.jpeg`,
+    `${basePath}/10.jpeg`,
+    `${basePath}/11.jpeg`,
+    `${basePath}/12.jpeg`,
+    `${basePath}/13.jpeg`,
+    `${basePath}/14.jpeg`,
+    `${basePath}/15.jpeg`,
   ];
 
   return (
@@ -31,7 +33,7 @@ export default function Home() {
         <InteractionFlow onFlowComplete={() => setShowGallery(true)} />
       ) : (
         <>
-          <audio src="/pretty.mp3" autoPlay loop className="hidden" />
+          <audio src={`${basePath}/pretty.mp3`} autoPlay loop className="hidden" />
           <DomeGallery
             images={userImages}
             fit={0.8}
